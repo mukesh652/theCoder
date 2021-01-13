@@ -1,0 +1,16 @@
+import pyodbc
+cnxn = pyodbc.connect('Driver={SQL Server};'
+                      'Server=;'
+                      'Database=;'
+                      'uid=;pwd='
+                      'Trusted_Connection=yes;')
+
+ 
+
+cursor = cnxn.cursor()
+cursor.execute('SELECT * FROM Inclist')
+
+ 
+
+for row in cursor:
+    print(row)
